@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ICRIMEFIGTER">
+  <test  name="Verifying whether case count is same both old and new website">
+    <classes>
+      <class name="com.loginPageTest.CaseListTest"/>
+    </classes>
+  </test> 
+</suite>

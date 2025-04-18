@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-04-18T10:01:13 IST" name="ICRIMEFIGTER" finished-at="2025-04-18T10:01:45 IST" duration-ms="32039">
+    <groups>
+    </groups>
+    <test started-at="2025-04-18T10:01:13 IST" name="Verifying whether case count is same both old and new website" finished-at="2025-04-18T10:01:45 IST" duration-ms="32039">
+      <class name="com.loginPageTest.CaseListTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.loginPageTest.CaseListTest@74e52ef6]" started-at="2025-04-18T10:01:14 IST" name="setUp" finished-at="2025-04-18T10:01:23 IST" duration-ms="8727" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:com.loginPageTest.CaseListTest@74e52ef6]" started-at="2025-04-18T10:01:23 IST" name="loginTest" data-provider="CrendentialSupplier" finished-at="2025-04-18T10:01:44 IST" duration-ms="21573" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pugalkkb@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Bhuvanakrishkavi@2614]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.loginPageTest.CaseListTest@74e52ef6]" started-at="2025-04-18T10:01:44 IST" name="tearDown" finished-at="2025-04-18T10:01:45 IST" duration-ms="460" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=CaseListTest.loginTest(java.lang.String,java.lang.String)[pri:0, instance:com.loginPageTest.CaseListTest@74e52ef6] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.loginPageTest.CaseListTest -->
+    </test> <!-- Verifying whether case count is same both old and new website -->
+  </suite> <!-- ICRIMEFIGTER -->
+</testng-results>
