@@ -33,14 +33,14 @@ import com.utility.WriteValuesInExcel;
 public class GetDifferentCaseNameTest extends TestBase {
 
 	GetDifferentCaseName loginPage;
-	
+
 	GetDifferentCaseNameTest log;
 
 	WriteValuesInExcel excel;
 
 	FileOutputStream fo;
-	
-	List<String> totalCase=new ArrayList<>();
+
+	List<String> totalCase = new ArrayList<>();
 
 	public GetDifferentCaseNameTest() {
 		super();
@@ -63,87 +63,87 @@ public class GetDifferentCaseNameTest extends TestBase {
 //
 //		for (int rownum = 2; rownum <= rowNum; rowNum++) {
 
-			String uname1 = reader.getCellData(prop.getProperty("sheetName"), "Username", 2);
+		String uname1 = reader.getCellData(prop.getProperty("sheetName"), "Username", 2);
 
-			String pword1 = reader.getCellData(prop.getProperty("sheetName"), "Password", 2);
+		String pword1 = reader.getCellData(prop.getProperty("sheetName"), "Password", 2);
 
-			// System.out.println(uname + pword);
+		// System.out.println(uname + pword);
 
-			Thread.sleep(3000);
+		Thread.sleep(3000);
 
-			loginPage.doClickOnEmailTextBox();
+		loginPage.doClickOnEmailTextBox();
 
-			Thread.sleep(3000);
+		Thread.sleep(3000);
 
-			loginPage.enterEmail(uname1 + Keys.ENTER);
+		loginPage.enterEmail(uname1 + Keys.ENTER);
 
-			// Thread.sleep(3000);
+		// Thread.sleep(3000);
 
-			// loginPage.doClickContinueButton();
+		// loginPage.doClickContinueButton();
 
-			Thread.sleep(3000);
+		Thread.sleep(3000);
 
-			loginPage.doClickOnPasswordTextBox();
+		loginPage.doClickOnPasswordTextBox();
 
-			Thread.sleep(3000);
+		Thread.sleep(3000);
 
-			loginPage.enterPassword(pword1 + Keys.ENTER);
+		loginPage.enterPassword(pword1 + Keys.ENTER);
 
-			// Thread.sleep(3000);
+		// Thread.sleep(3000);
 
-			// loginPage.doClickLoginButton();
+		// loginPage.doClickLoginButton();
 
-			Thread.sleep(7000);
+		Thread.sleep(7000);
 
 //			String records = driver.findElement(By.xpath("//*[@class='mat-mdc-paginator-range-label']")).getText();
 //			
 //			String totalCount = records.substring(records.indexOf("f") + 1).trim();
-			//
+		//
 //			System.out.println("Old Website total record is " + totalCount);
 
-			loginPage.doClickNumberOfItemSelect();
+		loginPage.doClickNumberOfItemSelect();
+
+		Thread.sleep(3000);
+
+		loginPage.selectNumberOfRecordSelectPerPage();
+
+		Thread.sleep(3000);
+
+		List<WebElement> caseNames = driver.findElements(By.xpath("//mat-table//mat-row//mat-cell[3]"));
+
+		// List<String> names = new ArrayList<String>();
+		for (WebElement casename : caseNames) {
+
+			totalCase.add(casename.getText());
+
+		}
+		String nextButton = driver.findElement(By.xpath("//button[@aria-label='Next page']"))
+				.getDomAttribute("aria-disabled");
+
+		boolean button = Boolean.parseBoolean(nextButton);
+
+		// System.out.println(button);
+
+		while (button != true) {
+
+			// Thread.sleep(10000);
+
+			driver.findElement(By.xpath("//button[@aria-label='Next page']")).click();
 
 			Thread.sleep(3000);
 
-			loginPage.selectNumberOfRecordSelectPerPage();
+			caseNames = driver.findElements(By.xpath("//mat-table//mat-row//mat-cell[3]"));
 
-			Thread.sleep(3000);
-
-			List<WebElement> caseNames = driver.findElements(By.xpath("//mat-table//mat-row//mat-cell[3]"));
-
-			//List<String> names = new ArrayList<String>();
 			for (WebElement casename : caseNames) {
 
 				totalCase.add(casename.getText());
 
 			}
-			String nextButton = driver.findElement(By.xpath("//button[@aria-label='Next page']"))
+
+			nextButton = driver.findElement(By.xpath("//button[@aria-label='Next page']"))
 					.getDomAttribute("aria-disabled");
-
-			boolean button = Boolean.parseBoolean(nextButton);
-
-			// System.out.println(button);
-
-			while (button != true) {
-
-				// Thread.sleep(10000);
-
-				driver.findElement(By.xpath("//button[@aria-label='Next page']")).click();
-
-				Thread.sleep(3000);
-
-				caseNames = driver.findElements(By.xpath("//mat-table//mat-row//mat-cell[3]"));
-
-				for (WebElement casename : caseNames) {
-
-					totalCase.add(casename.getText());
-
-				}
-
-				nextButton = driver.findElement(By.xpath("//button[@aria-label='Next page']"))
-						.getDomAttribute("aria-disabled");
-				button = Boolean.parseBoolean(nextButton);
-			} // first user
+			button = Boolean.parseBoolean(nextButton);
+		} // first user
 
 //			for (String name : names) {
 //
@@ -152,9 +152,8 @@ public class GetDifferentCaseNameTest extends TestBase {
 
 //			System.out.println("The Case Count of user name " + uname1 + " " + "is" + "=>" + names.size());
 
-		//	System.out.println("===========================================================");
+		// System.out.println("===========================================================");
 
-		
 		driver.close();
 
 	}
@@ -212,7 +211,7 @@ public class GetDifferentCaseNameTest extends TestBase {
 
 		List<WebElement> caseNames2 = driver.findElements(By.xpath("//mat-table//mat-row//mat-cell[3]"));
 
-		//List<String> names2 = new ArrayList<String>();
+		// List<String> names2 = new ArrayList<String>();
 		for (WebElement casename : caseNames2) {
 
 			totalCase.add(casename.getText());
@@ -252,7 +251,7 @@ public class GetDifferentCaseNameTest extends TestBase {
 //		}
 //
 //		System.out.println("The Case Count of user name " + uname2 + " " + "is" + "=>" + names2.size());
-	//	System.out.println("===========================================================");
+		// System.out.println("===========================================================");
 
 		driver.close();
 	}
@@ -310,7 +309,7 @@ public class GetDifferentCaseNameTest extends TestBase {
 
 		List<WebElement> caseNames3 = driver.findElements(By.xpath("//mat-table//mat-row//mat-cell[3]"));
 
-		//List<String> names3 = new ArrayList<String>();
+		// List<String> names3 = new ArrayList<String>();
 		for (WebElement casename : caseNames3) {
 
 			totalCase.add(casename.getText());
@@ -349,7 +348,7 @@ public class GetDifferentCaseNameTest extends TestBase {
 //		}
 //
 //		System.out.println("The Case Count of user name " + uname3 + " " + "is" + "=>" + names3.size());
-	//	System.out.println("===========================================================");
+		// System.out.println("===========================================================");
 
 		driver.close();
 	}
@@ -405,7 +404,7 @@ public class GetDifferentCaseNameTest extends TestBase {
 
 		List<WebElement> caseNames4 = driver.findElements(By.xpath("//mat-table//mat-row//mat-cell[3]"));
 
-		//List<String> names4 = new ArrayList<String>();
+		// List<String> names4 = new ArrayList<String>();
 		for (WebElement casename : caseNames4) {
 
 			totalCase.add(casename.getText());
@@ -446,7 +445,7 @@ public class GetDifferentCaseNameTest extends TestBase {
 //
 //		System.out.println("The Case Count of user name " + uname4 + " " + "is" + "=>" + names4.size());
 
-		//System.out.println("===========================================================");
+		// System.out.println("===========================================================");
 
 		driver.close();
 
@@ -503,7 +502,7 @@ public class GetDifferentCaseNameTest extends TestBase {
 
 		List<WebElement> caseNames5 = driver.findElements(By.xpath("//mat-table//mat-row//mat-cell[3]"));
 
-		//List<String> names5 = new ArrayList<String>();
+		// List<String> names5 = new ArrayList<String>();
 		for (WebElement casename : caseNames5) {
 
 			totalCase.add(casename.getText());
@@ -545,30 +544,45 @@ public class GetDifferentCaseNameTest extends TestBase {
 //
 //		System.out.println("The Case Count of user name " + uname5 + " " + "is" + "=>" + names5.size());
 
-		//System.out.println("===========================================================");
+		// System.out.println("===========================================================");
 
 		driver.close();
 
 	}// Method
+
 	@Test(priority = 6)
-    public void getTotalCaseFileName() throws IOException {
-    	
+	public void getTotalCaseFileName() throws IOException {
+
 		ArrayList<String> listWithDuplicates = new ArrayList<>(totalCase);
-        Set<String> uniqueSet = new HashSet<>(listWithDuplicates);
-        ArrayList<String> uniqueList = new ArrayList<>(uniqueSet);
-        
-        System.out.println(uniqueList);
-        
-       for (String differentCases : uniqueList) {
-    	   
-    	   excel.writeExcelValue(prop.getProperty("TestData"), prop.getProperty("caseName"), differentCases);
-		
+		Set<String> uniqueSet = new HashSet<>(listWithDuplicates);
+		ArrayList<String> uniqueList = new ArrayList<>(uniqueSet);
+
+		// System.out.println(uniqueList);
+
+		int rowNum = 0;
+
+		// int cellNum=0;
+
+		Workbook wb = new XSSFWorkbook();
+
+		fo = new FileOutputStream(prop.getProperty("TestData1"));
+
+		Sheet sheet = wb.createSheet(prop.getProperty("caseName"));
+
+		for (String differentCases : uniqueList) {
+
+			Row row = sheet.createRow(rowNum++);
+
+			Cell cell = row.createCell(0);
+
+			cell.setCellValue(differentCases);
+
+		}
+
+		wb.write(fo);
+
+		driver.close();
 	}
-       
-       driver.close();
-    }
-	
-	
 
 	@AfterMethod
 	public void tearDown(ITestResult result) throws IOException {

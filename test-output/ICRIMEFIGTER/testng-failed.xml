@@ -5,11 +5,27 @@
     <classes>
       <class name="com.loginPageTest.CaseListTest">
         <methods>
-          <include name="loginTest" invocation-numbers="1 3"/>
+          <include name="loginTest"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.loginPageTest.CaseListTest -->
     </classes>
   </test> <!-- Verifying whether case count is same both old and new website(failed) -->
+  <test thread-count="5" name="Verifying whether different case name from multiple users(failed)">
+    <classes>
+      <class name="com.loginPageTest.GetDifferentCaseNameTest">
+        <methods>
+          <include name="getDifferentCaseFileName3"/>
+          <include name="getDifferentCaseFileName1"/>
+          <include name="getDifferentCaseFileName4"/>
+          <include name="getDifferentCaseFileName2"/>
+          <include name="getDifferentCaseFileName5"/>
+          <include name="tearDown"/>
+          <include name="getTotalCaseFileName"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.loginPageTest.GetDifferentCaseNameTest -->
+    </classes>
+  </test> <!-- Verifying whether different case name from multiple users(failed) -->
 </suite> <!-- Failed suite [ICRIMEFIGTER] -->
